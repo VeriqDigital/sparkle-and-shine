@@ -3,11 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { footerLinks, siteConfig } from "@/config/site";
-import { services } from "@/data/services";
+import type { Service } from "@/sanity/lib/services";
 import LeadModal from "./LeadModal";
 import useLeadModal from "./useLeadModal";
 
-const Footer = () => {
+type FooterProps = {
+  services: Pick<Service, "_id" | "title" | "slug">[];
+};
+
+const Footer = ({ services }: FooterProps) => {
   const modal = useLeadModal();
 
   return (
@@ -22,7 +26,7 @@ const Footer = () => {
             >
               <span className="flex size-20 items-center justify-center rounded-full bg-white">
                 <Image
-                  src="/DomLogoNoBG.png"
+                  src="/logo.png"
                   alt="Domenica’s Cleaning logo"
                   width={1024}
                   height={1024}
@@ -40,8 +44,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-6 max-w-md leading-7 text-(--muted-on-dark)">
-              Personal, detail-oriented cleaning for houses, apartments,
-              moves, deep cleans, campers, and RVs in Wisconsin.
+              Personal, detail-oriented cleaning for houses, apartments, moves,
+              deep cleans, campers, and RVs in Wisconsin.
             </p>
             <p className="mt-4 font-heading font-bold text-(--text-on-dark)">
               Local service. Direct communication. Thoughtful care.
@@ -54,7 +58,7 @@ const Footer = () => {
             </h2>
             <ul className="mt-5 grid gap-2 text-sm font-semibold text-(--muted-on-dark)">
               {services.slice(0, 5).map((service) => (
-                <li key={service.title}>
+                <li key={service._id}>
                   <Link
                     href="/services"
                     className="inline-flex min-h-10 items-center transition hover:text-(--text-on-dark)"
@@ -126,8 +130,8 @@ const Footer = () => {
         <div className="mt-12 border-t border-(--subtle-on-dark) pt-6 text-xs leading-6 text-(--subtle-on-dark) sm:flex sm:items-start sm:justify-between sm:gap-8">
           <div className="max-w-2xl">
             <p>
-              Unofficial website preview. Online form delivery and final business
-              details must be confirmed before launch.
+              Unofficial website preview. Online form delivery and final
+              business details must be confirmed before launch.
             </p>
             <p className="mt-1">&copy; 2026 {siteConfig.name}. Wisconsin.</p>
           </div>

@@ -15,7 +15,7 @@ const AboutIntro = ({ headingAs = "h2" }: AboutIntroProps) => {
       <div className="relative mx-auto w-full max-w-md">
         <div className="relative aspect-[4/4.6] overflow-hidden rounded-[1.5rem] shadow-(--shadow-sm) sm:rounded-[2rem]">
           <Image
-            src="/domcleanad.jpg"
+            src="/person.jpg"
             alt="Domenica, owner of Dom Clean"
             fill
             sizes="(min-width: 1024px) 38vw, (min-width: 640px) 28rem, 100vw"
@@ -35,8 +35,8 @@ const AboutIntro = ({ headingAs = "h2" }: AboutIntroProps) => {
         <p className="mt-5 max-w-2xl text-lg font-semibold leading-7 text-(--foreground) sm:mt-6 sm:text-xl sm:leading-8">
           Hi, I’m Domenica. I’m detail-oriented and love leaving spaces looking
           fresh, comfortable, and thoroughly cared for. Whether you’re moving,
-          managing a busy schedule, or simply do not feel like spending your free
-          time cleaning, I’m here to help.
+          managing a busy schedule, or simply do not feel like spending your
+          free time cleaning, I’m here to help.
         </p>
         <p className="mt-5 max-w-2xl leading-7 text-(--muted)">
           You work directly with me from the first message through the completed

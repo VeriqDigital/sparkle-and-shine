@@ -4,6 +4,8 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import { siteConfig } from "@/config/site";
+import { SanityLive } from "@/sanity/lib/live";
+import { getServices } from "@/sanity/lib/services";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -76,11 +78,13 @@ const localBusinessSchema = {
   })),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const services = await getServices();
+
   return (
     <html
       lang="en"
@@ -96,7 +100,8 @@ export default function RootLayout({
         <ScrollToTop />
         <Navbar />
         {children}
-        <Footer />
+        <Footer services={services} />
+        <SanityLive />
       </body>
     </html>
   );

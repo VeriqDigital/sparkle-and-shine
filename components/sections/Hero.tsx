@@ -14,7 +14,10 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-(--background) pb-12 pt-7 sm:pb-20 sm:pt-12 lg:pb-24 lg:pt-16">
-      <div aria-hidden="true" className="absolute -right-32 -top-32 size-96 rounded-full bg-(--blue-light)/45 blur-3xl" />
+      <div
+        aria-hidden="true"
+        className="absolute -right-32 -top-32 size-96 rounded-full bg-(--blue-light)/45 blur-3xl"
+      />
       <Container className="relative">
         <div className="grid items-center gap-9 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div className="max-w-2xl">
@@ -32,9 +35,7 @@ const Hero = () => {
             </p>
             <div className="mt-6 flex max-w-xl items-start gap-3 rounded-2xl border border-(--border) bg-white p-4 text-sm leading-6 text-(--foreground) shadow-(--shadow-sm)">
               <MessageIcon className="mt-0.5 size-5 shrink-0 text-(--blue)" />
-              <p>
-                Personal service and direct communication with Domenica.
-              </p>
+              <p>Personal service and direct communication with Domenica.</p>
             </div>
             <div className="mt-7 flex flex-col gap-3 min-[430px]:flex-row [&>*]:w-full min-[430px]:[&>*]:w-auto">
               <Button onClick={() => modal.openModal(primaryCta.modal)}>

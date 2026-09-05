@@ -48,9 +48,13 @@ const Navbar = () => {
       </div>
 
       <div className="mx-auto hidden h-24 w-full max-w-(--container-width) items-center gap-8 px-10 lg:flex">
-        <Link href="/" className="flex w-44 shrink-0 items-center" aria-label="Domenica’s Cleaning home">
+        <Link
+          href="/"
+          className="flex w-44 shrink-0 items-center"
+          aria-label="Domenica’s Cleaning home"
+        >
           <Image
-            src="/DomLogoNoBG.png"
+            src="/logo.png"
             alt="Domenica’s Cleaning logo"
             width={1024}
             height={1024}
@@ -58,17 +62,33 @@ const Navbar = () => {
             sizes="84px"
             preload
           />
-          <span className="-ml-1 font-heading text-lg font-extrabold leading-tight text-(--navy)">Domenica’s<br />Cleaning</span>
+          <span className="-ml-1 font-heading text-lg font-extrabold leading-tight text-(--navy)">
+            Domenica’s
+            <br />
+            Cleaning
+          </span>
         </Link>
 
-        <nav aria-label="Primary navigation" className="ml-auto flex items-center gap-6 xl:gap-8">
+        <nav
+          aria-label="Primary navigation"
+          className="ml-auto flex items-center gap-6 xl:gap-8"
+        >
           {navigation.map((item) =>
             "href" in item ? (
-              <Link key={item.href} href={item.href} className="min-h-11 content-center whitespace-nowrap font-heading text-sm font-bold text-(--navy) transition hover:text-(--blue)">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="min-h-11 content-center whitespace-nowrap font-heading text-sm font-bold text-(--navy) transition hover:text-(--blue)"
+              >
                 {item.label}
               </Link>
             ) : (
-              <button key={item.label} type="button" onClick={() => modal.openModal(item.modal)} className="min-h-11 cursor-pointer font-heading text-sm font-bold text-(--navy) hover:text-(--blue)">
+              <button
+                key={item.label}
+                type="button"
+                onClick={() => modal.openModal(item.modal)}
+                className="min-h-11 cursor-pointer font-heading text-sm font-bold text-(--navy) hover:text-(--blue)"
+              >
                 {item.label}
               </button>
             ),
@@ -77,17 +97,42 @@ const Navbar = () => {
 
         <div className="flex shrink-0 items-center gap-4 border-l border-(--border) pl-6">
           <address className="not-italic leading-tight">
-            <span className="block text-[0.68rem] font-bold uppercase tracking-[0.12em] text-(--muted)">Call or text Domenica</span>
-            <a href={siteConfig.contact.phoneHref} className="mt-1 block font-heading text-base font-extrabold text-(--navy) hover:text-(--blue)">{siteConfig.contact.phone}</a>
+            <span className="block text-[0.68rem] font-bold uppercase tracking-[0.12em] text-(--muted)">
+              Call or text Domenica
+            </span>
+            <a
+              href={siteConfig.contact.phoneHref}
+              className="mt-1 block font-heading text-base font-extrabold text-(--navy) hover:text-(--blue)"
+            >
+              {siteConfig.contact.phone}
+            </a>
           </address>
-          <Button onClick={() => modal.openModal(primaryCta.modal)}>Request a Quote</Button>
+          <Button onClick={() => modal.openModal(primaryCta.modal)}>
+            Request a Quote
+          </Button>
         </div>
       </div>
 
       <div className="mx-auto flex h-19 w-full items-center justify-between px-4 sm:px-6 lg:hidden">
-        <Link href="/" className="flex items-center" aria-label="Domenica’s Cleaning home">
-          <Image src="/DomLogoNoBG.png" alt="Domenica’s Cleaning logo" width={1024} height={1024} className="size-16 object-contain" sizes="64px" preload />
-          <span className="-ml-1 hidden font-heading text-sm font-extrabold leading-tight text-(--navy) min-[390px]:block">Domenica’s<br />Cleaning</span>
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label="Domenica’s Cleaning home"
+        >
+          <Image
+            src="/logo.png"
+            alt="Domenica’s Cleaning logo"
+            width={1024}
+            height={1024}
+            className="size-16 object-contain"
+            sizes="64px"
+            preload
+          />
+          <span className="-ml-1 hidden font-heading text-sm font-extrabold leading-tight text-(--navy) min-[390px]:block">
+            Domenica’s
+            <br />
+            Cleaning
+          </span>
         </Link>
         <div className="flex items-center gap-2">
           <button
@@ -100,15 +145,23 @@ const Navbar = () => {
           <button
             type="button"
             className="flex size-11 items-center justify-center rounded-full border border-(--border) text-(--navy)"
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation-menu"
             onClick={() => setIsMenuOpen((value) => !value)}
           >
             <span className="grid gap-1.5" aria-hidden="true">
-              <span className={`block h-0.5 w-5 rounded-full bg-current transition-transform ${isMenuOpen ? "translate-y-2 rotate-45" : ""}`} />
-              <span className={`block h-0.5 w-5 rounded-full bg-current transition-opacity ${isMenuOpen ? "opacity-0" : ""}`} />
-              <span className={`block h-0.5 w-5 rounded-full bg-current transition-transform ${isMenuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+              <span
+                className={`block h-0.5 w-5 rounded-full bg-current transition-transform ${isMenuOpen ? "translate-y-2 rotate-45" : ""}`}
+              />
+              <span
+                className={`block h-0.5 w-5 rounded-full bg-current transition-opacity ${isMenuOpen ? "opacity-0" : ""}`}
+              />
+              <span
+                className={`block h-0.5 w-5 rounded-full bg-current transition-transform ${isMenuOpen ? "-translate-y-2 -rotate-45" : ""}`}
+              />
             </span>
           </button>
         </div>
@@ -124,25 +177,62 @@ const Navbar = () => {
             className="border-t border-(--border) bg-white px-4 pb-6 pt-2 shadow-xl sm:px-6"
             onClick={(event) => event.stopPropagation()}
           >
-          <nav aria-label="Mobile navigation" className="mx-auto grid max-w-xl">
-            {navigation.map((item) =>
-              "href" in item ? (
-                <Link key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)} className="min-h-12 content-center border-b border-(--border-warm) px-2 font-heading font-bold text-(--navy)">{item.label}</Link>
-              ) : (
-                <button key={item.label} type="button" onClick={() => { setIsMenuOpen(false); modal.openModal(item.modal); }} className="min-h-12 cursor-pointer border-b border-(--border-warm) px-2 text-left font-heading font-bold text-(--navy)">{item.label}</button>
-              ),
-            )}
-          </nav>
-          <div className="mx-auto mt-4 grid max-w-xl gap-3 min-[390px]:grid-cols-2">
-            <a href={siteConfig.contact.smsHref} className="min-h-12 content-center rounded-full border border-(--blue) bg-white text-center font-heading text-sm font-bold text-(--navy) hover:bg-(--surface-soft)">Message Domenica</a>
-            <a href={siteConfig.contact.phoneHref} className="min-h-12 content-center rounded-full border border-(--blue) text-center font-heading text-sm font-bold text-(--navy)">Call Domenica</a>
-          </div>
+            <nav
+              aria-label="Mobile navigation"
+              className="mx-auto grid max-w-xl"
+            >
+              {navigation.map((item) =>
+                "href" in item ? (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="min-h-12 content-center border-b border-(--border-warm) px-2 font-heading font-bold text-(--navy)"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      modal.openModal(item.modal);
+                    }}
+                    className="min-h-12 cursor-pointer border-b border-(--border-warm) px-2 text-left font-heading font-bold text-(--navy)"
+                  >
+                    {item.label}
+                  </button>
+                ),
+              )}
+            </nav>
+            <div className="mx-auto mt-4 grid max-w-xl gap-3 min-[390px]:grid-cols-2">
+              <a
+                href={siteConfig.contact.smsHref}
+                className="min-h-12 content-center rounded-full border border-(--blue) bg-white text-center font-heading text-sm font-bold text-(--navy) hover:bg-(--surface-soft)"
+              >
+                Message Domenica
+              </a>
+              <a
+                href={siteConfig.contact.phoneHref}
+                className="min-h-12 content-center rounded-full border border-(--blue) text-center font-heading text-sm font-bold text-(--navy)"
+              >
+                Call Domenica
+              </a>
+            </div>
           </div>
         </div>
       )}
 
       {modal.activeModal && (
-        <LeadModal activeModal={modal.activeModal} hasSubmitted={modal.hasSubmitted} isSubmitting={modal.isSubmitting} onClose={modal.closeModal} onSubmit={modal.handleFormSubmit} submitError={modal.submitError} />
+        <LeadModal
+          activeModal={modal.activeModal}
+          hasSubmitted={modal.hasSubmitted}
+          isSubmitting={modal.isSubmitting}
+          onClose={modal.closeModal}
+          onSubmit={modal.handleFormSubmit}
+          submitError={modal.submitError}
+        />
       )}
     </header>
   );

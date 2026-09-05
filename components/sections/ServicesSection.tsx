@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { ArrowIcon } from "@/components/ui/Icons";
-import { services } from "@/data/services";
+import { urlFor } from "@/sanity/lib/image";
+import type { Service } from "@/sanity/lib/services";
 
 type ServicesSectionProps = {
+  services: Service[];
   showAll?: boolean;
   headingAs?: "h1" | "h2";
 };
 
 const ServicesSection = ({
+  services,
   showAll = false,
   headingAs = "h2",
 }: ServicesSectionProps) => {
@@ -29,41 +32,57 @@ const ServicesSection = ({
         </p>
       </div>
 
-      <div className="mt-9 grid gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <article
-            key={service.title}
-            className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-(--border) bg-white text-(--foreground) shadow-(--shadow-sm) transition hover:-translate-y-1 hover:border-(--blue-light) hover:shadow-(--shadow-lg) sm:rounded-[1.5rem]"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden bg-(--surface-soft)">
-              <Image
-                src={service.image}
-                alt={service.alt}
-                fill
-                className="object-cover transition duration-500 group-hover:scale-[1.025]"
-                sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc(50vw - 3rem), 390px"
-              />
-              <span className="absolute left-4 top-4 rounded-full border border-(--border) bg-white px-3 py-1 text-xs font-extrabold tracking-wide text-(--navy) shadow-sm">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col p-5 sm:p-7">
-              <h3 className="font-heading text-2xl font-bold text-(--navy)">
-                {service.title}
-              </h3>
-              <p className="mt-4 flex-1 leading-7 text-(--muted)">
-                {service.description}
-              </p>
-              <a
-                href="/contact"
-                className="mt-6 inline-flex min-h-11 items-center gap-2 font-heading text-sm font-extrabold text-(--blue) transition hover:text-(--navy-deep)"
-              >
-                Ask about this service <ArrowIcon className="size-4" />
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
+      {services.length > 0 ? (
+        <div className="mt-9 grid gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <article
+              key={service._id}
+              className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-(--border) bg-white text-(--foreground) shadow-(--shadow-sm) transition hover:-translate-y-1 hover:border-(--blue-light) hover:shadow-(--shadow-lg) sm:rounded-[1.5rem]"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-(--surface-soft)">
+                {service.image && (
+                  <Image
+                    src={urlFor(service.image)
+                      .width(780)
+                      .height(585)
+                      .fit("crop")
+                      .quality(85)
+                      .url()}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.025]"
+                    sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc(50vw - 3rem), 390px"
+                  />
+                )}
+                <span className="absolute left-4 top-4 rounded-full border border-(--border) bg-white px-3 py-1 text-xs font-extrabold tracking-wide text-(--navy) shadow-sm">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-5 sm:p-7">
+                <h3 className="font-heading text-2xl font-bold text-(--navy)">
+                  {service.title}
+                </h3>
+                {service.description && (
+                  <p className="mt-4 flex-1 leading-7 text-(--muted)">
+                    {service.description}
+                  </p>
+                )}
+                <a
+                  href="/contact"
+                  className="mt-6 inline-flex min-h-11 items-center gap-2 font-heading text-sm font-extrabold text-(--blue) transition hover:text-(--navy-deep)"
+                >
+                  Ask about this service <ArrowIcon className="size-4" />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p className="mt-9 leading-7 text-(--muted) sm:mt-12">
+          Service details are currently unavailable. Please contact Domenica for
+          current offerings.
+        </p>
+      )}
 
       {!showAll && (
         <div className="mt-10">

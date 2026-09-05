@@ -7,8 +7,11 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import TrustStrip from "@/components/sections/TrustStrip";
 import Section from "@/components/ui/Section";
+import { getServices } from "@/sanity/lib/services";
 
-export default function Home() {
+export default async function Home() {
+  const services = await getServices();
+
   return (
     <main>
       <Hero />
@@ -17,7 +20,7 @@ export default function Home() {
         <AboutIntro />
       </Section>
       <Section id="services" tone="blue">
-        <ServicesSection />
+        <ServicesSection services={services} />
       </Section>
       <Section id="process" tone="cream">
         <ProcessSection />
