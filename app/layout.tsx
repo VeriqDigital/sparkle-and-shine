@@ -1,45 +1,37 @@
-import type { Metadata } from "next";
-import { Manrope, Nunito_Sans } from "next/font/google";
+﻿import type { Metadata } from "next";
+import localFont from "next/font/local";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import ScrollToTop from "@/components/layout/ScrollToTop";
+import LeadProvider from "@/components/layout/LeadProvider";
 import { siteConfig } from "@/config/site";
-import { SanityLive } from "@/sanity/lib/live";
-import { getServices } from "@/sanity/lib/services";
 import "./globals.css";
 
-const manrope = Manrope({
+const manrope = localFont({
+  src: "./fonts/manrope-latin.woff2",
   variable: "--font-manrope",
-  subsets: ["latin"],
+  weight: "200 800",
+  display: "swap",
 });
-
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito-sans",
-  subsets: ["latin"],
+const jakarta = localFont({
+  src: "./fonts/plus-jakarta-sans-latin.woff2",
+  variable: "--font-display",
+  weight: "200 800",
+  display: "swap",
 });
-
 const defaultTitle =
-  "Domenica’s Cleaning | Residential, Move & RV Cleaning in Wisconsin";
+  "Sparkle & Shine | A Cleaner Home. A Lighter Week. | Website Concept";
 
 export const metadata: Metadata = {
   title: {
     default: defaultTitle,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.shortName} · Website Concept`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  keywords: [
-    "house cleaning Wisconsin",
-    "apartment cleaning Wisconsin",
-    "deep cleaning Wisconsin",
-    "move-in move-out cleaning Wisconsin",
-    "camper cleaning Wisconsin",
-    "RV cleaning Wisconsin",
-    "local cleaning service",
-  ],
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false, noimageindex: true },
   },
   openGraph: {
     title: defaultTitle,
@@ -50,58 +42,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Domenica’s Cleaning | Local Wisconsin Cleaning Service",
+    title: defaultTitle,
     description: siteConfig.description,
   },
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: siteConfig.name,
-  description: siteConfig.description,
-  telephone: siteConfig.contact.phone,
-  areaServed: {
-    "@type": "State",
-    name: siteConfig.location.businessState,
-  },
-  makesOffer: [
-    "Regular house cleaning",
-    "Apartment cleaning",
-    "Deep cleaning",
-    "Move-in and move-out cleaning",
-    "Camper and RV cleaning",
-    "Custom cleaning requests",
-  ].map((name) => ({
-    "@type": "Offer",
-    itemOffered: { "@type": "Service", name },
-  })),
-};
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const services = await getServices();
-
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} ${nunitoSans.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c"),
-          }}
-        />
-        <ScrollToTop />
-        <Navbar />
-        {children}
-        <Footer services={services} />
-        <SanityLive />
+    <html lang="en" className={`${manrope.variable} ${jakarta.variable}`}>
+      <body>
+        <LeadProvider>
+          <a className="skip-link" href="#main-content">
+            Skip to content
+          </a>
+          <Navbar />
+          {children}
+          <Footer />
+        </LeadProvider>
       </body>
     </html>
   );

@@ -1,32 +1,18 @@
-import Container from "./Container";
-
-type SectionProps = {
-  children: React.ReactNode;
-  id?: string;
-  tone?: "cream" | "white" | "blue";
-  className?: string;
-};
-
-const Section = ({
+﻿import Container from "./Container";
+export default function Section({
   children,
   id,
   tone = "cream",
   className = "",
-}: SectionProps) => {
-  const tones = {
-    cream: "bg-(--background)",
-    white: "bg-white",
-    blue: "bg-(--surface-soft)",
-  };
-
+}: {
+  children: React.ReactNode;
+  id?: string;
+  tone?: "cream" | "white" | "blue";
+  className?: string;
+}) {
   return (
-    <section
-      id={id}
-      className={`${tones[tone]} py-14 text-(--foreground) sm:py-22 lg:py-26 ${className}`}
-    >
+    <section id={id} className={`section section-${tone} ${className}`}>
       <Container>{children}</Container>
     </section>
   );
-};
-
-export default Section;
+}

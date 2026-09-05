@@ -1,40 +1,135 @@
-import type { Metadata } from "next";
-import ContactCtaSection from "@/components/sections/ContactCtaSection";
-import LocationSection from "@/components/sections/LocationSection";
-import Button from "@/components/ui/Button";
+﻿import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import QuoteButton from "@/components/ui/QuoteButton";
 import Section from "@/components/ui/Section";
+import LocationSection from "@/components/sections/LocationSection";
+import {
+  ArrowIcon,
+  HomeIcon,
+  SparkleIcon,
+  MessageIcon,
+} from "@/components/ui/Icons";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Contact & Request a Quote",
+  title: "Contact & Free Quote",
   description:
-    "Request a personalized quote for house, apartment, move-in, move-out, deep, camper or RV cleaning in Wisconsin.",
+    "Try the three-step Sparkle & Shine quote experience. This fictional cleaning company website concept is demo-only: no information is sent or stored.",
 };
-
 export default function ContactPage() {
   return (
-    <main>
-      <Section tone="cream" className="pt-12 sm:pt-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+    <main id="main-content">
+      <section className="contact-hero section">
+        <div className="site-container contact-grid">
           <div>
-            <p className="eyebrow">Contact Domenica</p>
-            <h1 className="mt-4 max-w-3xl font-heading text-[clamp(2.7rem,6vw,5rem)] font-bold leading-[0.98] tracking-[-0.04em] text-(--navy)">
-              Let’s Talk About Your Space
+            <p className="eyebrow">One small step. A lighter week.</p>
+            <h1>
+              Let’s take cleaning
+              <br />
+              <span className="text-blue">off your list.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-(--muted)">
-              Share what you need cleaned, the kind of space you have, and any
-              priorities that would help Domenica prepare a personalized quote.
+            <p className="hero-description">
+              Tell us a little about your home. We’ll help you find the right
+              clean, with the details clear from the start.
             </p>
+            <div className="contact-photo">
+              <Image
+                src="/house-cleaning.png"
+                alt="Freshly cared-for kitchen with natural light and warm wood details"
+                fill
+                sizes="(max-width: 767px) 90vw, 47vw"
+                preload
+              />
+              <span>
+                <SparkleIcon className="size-5" />
+                More time for the good stuff.
+              </span>
+            </div>
           </div>
-          <div className="flex min-w-60 flex-col gap-3 rounded-[1.5rem] border border-(--border) bg-white p-6 shadow-(--shadow-sm)">
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-(--blue)">Call or text</p>
-            <a href={siteConfig.contact.phoneHref} className="font-heading text-2xl font-bold text-(--navy)">{siteConfig.contact.phone}</a>
-            <Button href={siteConfig.contact.smsHref} variant="secondary">Message Domenica</Button>
+          <div className="contact-quote-card">
+            <p className="eyebrow">Your personalized estimate</p>
+            <h2>
+              Good things start
+              <br />
+              with a few details.
+            </h2>
+            <ol>
+              <li>
+                <HomeIcon />
+                <div>
+                  <strong>Your home</strong>
+                  <span>The space, size, and neighborhood.</span>
+                </div>
+                <span>01</span>
+              </li>
+              <li>
+                <SparkleIcon />
+                <div>
+                  <strong>Your cleaning</strong>
+                  <span>The service, rhythm, and priorities.</span>
+                </div>
+                <span>02</span>
+              </li>
+              <li>
+                <MessageIcon />
+                <div>
+                  <strong>Your contact details</strong>
+                  <span>The easiest way to keep in touch.</span>
+                </div>
+                <span>03</span>
+              </li>
+            </ol>
+            <QuoteButton>Start My Free Quote</QuoteButton>
+            <p className="contact-demo">
+              Try it with sample details. This is a concept demo; nothing is
+              sent, stored, or booked.
+            </p>
+            <div className="contact-direct">
+              <span>Prefer a conversation?</span>
+              <a href={siteConfig.contact.phoneHref}>
+                {siteConfig.contact.phone}
+              </a>
+              <a href={siteConfig.contact.smsHref} className="text-link">
+                Send a text
+                <ArrowIcon className="size-4" />
+              </a>
+              <small>Fictional contact number for this website concept.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Section tone="white">
+        <div className="contact-expectations">
+          <div>
+            <p className="eyebrow">A little preparation helps</p>
+            <h2>
+              You bring the priorities.
+              <br />
+              We’ll bring the plan.
+            </h2>
+          </div>
+          <div>
+            <p>
+              No need to have every detail figured out. Approximate room counts
+              and square footage are a useful start. Mention any particular
+              surfaces, pets, preferred timing, or rooms that need extra
+              attention.
+            </p>
+            <p>
+              The next step would be a conversation to confirm scope, pricing,
+              and availability. Trying this demo does not create an appointment.
+            </p>
+            <Link href="/services" className="text-link">
+              Not sure which service you need?
+              <ArrowIcon />
+            </Link>
           </div>
         </div>
       </Section>
-      <Section tone="white"><ContactCtaSection /></Section>
-      <Section tone="blue"><LocationSection /></Section>
+      <Section tone="blue">
+        <LocationSection />
+      </Section>
     </main>
   );
 }
