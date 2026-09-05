@@ -1,51 +1,40 @@
-import { CalendarIcon, MessageIcon, SparkleIcon } from "@/components/ui/Icons";
+﻿import QuoteButton from "@/components/ui/QuoteButton";
 
 const steps = [
   {
-    title: "Tell Domenica About Your Space",
-    description: "Send basic details, photos, and what you would like cleaned.",
-    Icon: MessageIcon,
+    title: "Tell us about your home",
+    text: "Approximate square footage, room counts, and your priorities help us plan. Include your preferred schedule or move date.",
   },
   {
-    title: "Receive a Personalized Quote",
-    description: "Domenica reviews the scope and confirms pricing and availability.",
-    Icon: CalendarIcon,
+    title: "Get your personalized quote",
+    text: "We review the details and confirm the scope, pricing, and availability with you.",
   },
   {
-    title: "Relax While It Gets Handled",
-    description: "Your space receives thoughtful, detail-oriented care.",
-    Icon: SparkleIcon,
+    title: "Confirm the visit",
+    text: "We agree on timing, access, and any special care instructions before cleaning according to your checklist.",
   },
-] as const;
-
-const ProcessSection = () => (
-  <div>
-    <div className="mx-auto max-w-3xl text-center">
-      <p className="eyebrow">How it works</p>
-      <h2 className="mt-4 font-heading text-[clamp(2.15rem,10vw,4.35rem)] font-bold leading-[1.03] tracking-[-0.035em] text-(--navy)">
-        A Simple, Personal Process
-      </h2>
-      <p className="mx-auto mt-5 max-w-2xl leading-7 text-(--muted)">
-        Clear communication from the first message makes it easier to plan the
-        right care for your space.
-      </p>
+];
+export default function ProcessSection() {
+  return (
+    <div>
+      <div className="section-heading process-heading">
+        <div>
+          <h2>From quote to first clean</h2>
+        </div>
+        <QuoteButton />
+      </div>
+      <ol className="process-timeline">
+        {steps.map((step, i) => (
+          <li key={step.title}>
+            <span className="step-number">0{i + 1}</span>
+            <div className="timeline-line">
+              <i />
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
     </div>
-
-    <ol className="relative mt-9 grid gap-4 sm:mt-12 sm:gap-5 lg:grid-cols-3">
-      {steps.map(({ title, description, Icon }, index) => (
-        <li key={title} className="relative rounded-[1.25rem] border border-(--border) bg-white p-5 shadow-(--shadow-sm) sm:rounded-[1.5rem] sm:p-7">
-          <div className="flex items-center justify-between">
-            <span className="flex size-12 items-center justify-center rounded-full bg-(--surface-blue) text-(--blue)">
-              <Icon className="size-6" />
-            </span>
-            <span className="font-heading text-sm font-extrabold tracking-[0.16em] text-(--blue)">0{index + 1}</span>
-          </div>
-          <h3 className="mt-6 font-heading text-xl font-bold leading-tight text-(--navy) sm:mt-7 sm:text-2xl">{title}</h3>
-          <p className="mt-4 leading-7 text-(--muted)">{description}</p>
-        </li>
-      ))}
-    </ol>
-  </div>
-);
-
-export default ProcessSection;
+  );
+}

@@ -1,52 +1,57 @@
-export const faqs = [
+﻿export const faqs = [
   {
-    question: "What types of spaces do you clean?",
+    question: "What is included in a standard cleaning?",
     answer:
-      "Domenica cleans houses, apartments, and camper or RV interiors. Share the kind of space you have when requesting a quote.",
+      "Typical visits cover kitchen counters and appliance exteriors, bathrooms, reachable dusting, vacuuming, and mopping. Your quote confirms the rooms, tasks, and any extras before a visit.",
   },
   {
     question: "Do you offer recurring cleaning?",
     answer:
-      "Yes. Regular house and apartment cleaning can be scheduled at a frequency that works for both you and Domenica.",
+      "Yes. Recurring home cleaning is our core service. We agree on a checklist and a regular rhythm so the everyday chores are easier to stay ahead of.",
   },
   {
-    question: "Do you provide deep cleaning?",
+    question: "How often can I schedule service?",
     answer:
-      "Yes. Deep cleaning is available for spaces that need extra attention, a seasonal reset, or a more thorough refresh.",
+      "Weekly, every two weeks, and monthly are the usual options. The right frequency depends on your household, priorities, and availability.",
+  },
+  {
+    question: "Do you bring cleaning supplies?",
+    answer:
+      "The plan is to bring supplies for the agreed tasks. Let us know about delicate finishes, product preferences, or sensitivities so suitable products and equipment can be confirmed first.",
+  },
+  {
+    question: "Do I need to be home?",
+    answer:
+      "You can be home or arrange access in advance. Entry instructions, pets, and how to secure your home afterward are all confirmed before the visit. Please do not put keys or access codes in the quote form.",
+  },
+  {
+    question: "Do you offer deep cleaning?",
+    answer:
+      "Yes. Deep cleaning allows extra attention for buildup and details such as reachable baseboards and trim. Tell us about the home's current condition so enough time can be planned.",
   },
   {
     question: "Do you offer move-in and move-out cleaning?",
     answer:
-      "Yes. Domenica can clean empty or transitioning homes and apartments before a move, after a move, or between occupants.",
+      "Yes. We can plan a clean for an empty home before you settle in or after you move out. Utilities, access, and requested extras are confirmed with your quote.",
   },
   {
-    question: "Do you clean campers and RVs?",
+    question: "Can I request specific rooms or priorities?",
     answer:
-      "Yes. Camper and RV interior cleaning can help prepare the space for travel, guests, storage, or a new season.",
+      "Absolutely. Share the rooms and tasks that matter most. We will review what fits the service, discuss any special care, and confirm the scope with you.",
   },
   {
-    question: "Do I need to provide cleaning supplies?",
+    question: "Which areas do you serve?",
     answer:
-      "Cleaning supplies, product preferences, and specific arrangements can be discussed when requesting your quote.",
+      "The concept service area includes West Des Moines, Des Moines, Waukee, Clive, Urbandale, Johnston, and Ankeny. Location and scheduling would be confirmed before booking.",
   },
   {
     question: "How is pricing determined?",
     answer:
-      "Pricing depends on the type and size of the space, its current condition, requested tasks, and cleaning frequency. Domenica reviews those details before confirming a personalized quote.",
-  },
-  {
-    question: "Do I need to be home during the cleaning?",
-    answer:
-      "Access and arrival arrangements can be discussed when scheduling so you can choose what works for your space.",
-  },
-  {
-    question: "Can I request specific rooms or tasks?",
-    answer:
-      "Yes. Tell Domenica which rooms and tasks matter most so she can review them as part of your quote.",
+      "Every quote is based on home size, current condition, service type, and frequency. Extras are discussed before you commit, so you know what is included.",
   },
   {
     question: "How do I request a quote?",
     answer:
-      "Use the quote form to share a few details about your space, or call or message Domenica directly at 815-714-1432.",
+      "Choose Get a Quote and follow the three short steps. This is a fictional website concept: the form lets you try the experience, but nothing is sent, stored, or booked.",
   },
-] as const;
+];

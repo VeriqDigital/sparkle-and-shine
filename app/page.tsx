@@ -1,4 +1,4 @@
-import AboutIntro from "@/components/sections/AboutIntro";
+﻿import AboutIntro from "@/components/sections/AboutIntro";
 import ContactCtaSection from "@/components/sections/ContactCtaSection";
 import FAQ from "@/components/sections/FAQ";
 import Hero from "@/components/sections/Hero";
@@ -6,34 +6,35 @@ import LocationSection from "@/components/sections/LocationSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import TrustStrip from "@/components/sections/TrustStrip";
+import CleaningChecklist from "@/components/sections/CleaningChecklist";
+import LifestyleSection from "@/components/sections/LifestyleSection";
 import Section from "@/components/ui/Section";
-import { getServices } from "@/sanity/lib/services";
 
-export default async function Home() {
-  const services = await getServices();
-
+export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Hero />
       <TrustStrip />
-      <Section id="about" tone="white">
+      <Section id="services" tone="white">
+        <ServicesSection />
+      </Section>
+      <Section id="checklist" tone="blue">
+        <CleaningChecklist />
+      </Section>
+      <Section id="why-us" tone="cream">
         <AboutIntro />
       </Section>
-      <Section id="services" tone="blue">
-        <ServicesSection services={services} />
-      </Section>
-      <Section id="process" tone="cream">
+      <LifestyleSection />
+      <Section id="process" tone="white">
         <ProcessSection />
       </Section>
-      <Section tone="white">
-        <ContactCtaSection />
-      </Section>
-      <Section id="service-area" tone="blue">
+      <Section id="service-area" tone="white" className="home-service-area">
         <LocationSection />
       </Section>
       <Section id="faq" tone="cream">
         <FAQ />
       </Section>
+      <ContactCtaSection />
     </main>
   );
 }
