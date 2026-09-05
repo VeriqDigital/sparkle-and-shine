@@ -3,7 +3,7 @@
   shortName: "Sparkle & Shine",
   tagline: "A cleaner home. A lighter week.",
   description:
-    "A residential cleaning website concept for the Des Moines metro, created by Veriq Digital. Sparkle & Shine is a fictional business.",
+    "A residential cleaning website concept for the Des Moines metro, created by Veriq. Sparkle & Shine is a fictional business.",
   locale: "en_US",
   location: {
     businessCity: "West Des Moines",

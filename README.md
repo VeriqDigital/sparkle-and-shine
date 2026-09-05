@@ -1,6 +1,6 @@
 ﻿# Sparkle & Shine Cleaning Co.
 
-A fictional residential cleaning company website concept created by [Veriq Digital](https://www.veriqdigital.com/). Built on the existing Next.js 16 App Router, React 19, and Tailwind 4 foundation.
+A fictional residential cleaning company website concept created by [Veriq](https://www.veriqdigital.com/). Built on the existing Next.js 16 App Router, React 19, and Tailwind 4 foundation.
 
 ## Development
 

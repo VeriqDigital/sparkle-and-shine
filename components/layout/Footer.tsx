@@ -63,7 +63,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>
             Sparkle & Shine Cleaning Co. is a fictional business created as a
-            website concept by Veriq Digital.
+            website concept by Veriq.
           </p>
           <p>
             Website designed by{" "}
@@ -72,7 +72,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Veriq Digital ↗
+              Veriq ↗
             </a>
           </p>
         </div>

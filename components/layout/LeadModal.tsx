@@ -105,8 +105,8 @@ export default function LeadModal({
           </h2>
           <p id="quote-demo-note">
             You’ve tried the Sparkle & Shine quote experience. This is a
-            fictional website concept by Veriq Digital. Nothing was sent,
-            stored, or booked, and no one will contact you.
+            fictional website concept by Veriq. Nothing was sent, stored, or
+            booked, and no one will contact you.
           </p>
           <button className="button button-primary" onClick={onClose}>
             Back to the good stuff

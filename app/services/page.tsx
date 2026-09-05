@@ -10,7 +10,7 @@ import { ArrowIcon, SparkleIcon } from "@/components/ui/Icons";
 export const metadata: Metadata = {
   title: "Cleaning Services",
   description:
-    "Six thoughtful residential cleaning services for a fictional Des Moines metro business. Explore the Sparkle & Shine website concept by Veriq Digital.",
+    "Six thoughtful residential cleaning services for a fictional Des Moines metro business. Explore the Sparkle & Shine website concept by Veriq.",
 };
 export default function ServicesPage() {
   return (

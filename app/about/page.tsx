@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Our Approach",
   description:
-    "Cleaning built around consistency. Explore the team philosophy behind Sparkle & Shine, a fictional Des Moines cleaning company concept by Veriq Digital.",
+    "Cleaning built around consistency. Explore the team philosophy behind Sparkle & Shine, a fictional Des Moines cleaning company concept by Veriq.",
 };
 
 const standards = [
