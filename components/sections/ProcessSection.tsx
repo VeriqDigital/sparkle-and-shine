@@ -3,28 +3,23 @@
 const steps = [
   {
     title: "Tell us about your home",
-    text: "Share your space, priorities, preferred schedule, and the service you have in mind.",
+    text: "Approximate square footage, room counts, and your priorities help us plan. Include your preferred schedule or move date.",
   },
   {
     title: "Get your personalized quote",
     text: "We review the details and confirm the scope, pricing, and availability with you.",
   },
   {
-    title: "Come home to clean",
-    text: "Your cleaning is handled according to the confirmed checklist. You get on with your day.",
+    title: "Confirm the visit",
+    text: "We agree on timing, access, and any special care instructions before cleaning according to your checklist.",
   },
 ];
 export default function ProcessSection() {
   return (
     <div>
-      <div className="section-heading">
+      <div className="section-heading process-heading">
         <div>
-          <p className="eyebrow">How it works</p>
-          <h2>
-            A simpler way
-            <br />
-            to a cleaner home.
-          </h2>
+          <h2>From quote to first clean</h2>
         </div>
         <QuoteButton />
       </div>

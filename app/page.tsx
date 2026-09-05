@@ -8,7 +8,6 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import TrustStrip from "@/components/sections/TrustStrip";
 import CleaningChecklist from "@/components/sections/CleaningChecklist";
 import LifestyleSection from "@/components/sections/LifestyleSection";
-import Testimonials from "@/components/sections/Testimonials";
 import Section from "@/components/ui/Section";
 
 export default function Home() {
@@ -29,10 +28,7 @@ export default function Home() {
       <Section id="process" tone="white">
         <ProcessSection />
       </Section>
-      <Section tone="cream">
-        <Testimonials />
-      </Section>
-      <Section id="service-area" tone="white">
+      <Section id="service-area" tone="white" className="home-service-area">
         <LocationSection />
       </Section>
       <Section id="faq" tone="cream">

@@ -1,5 +1,4 @@
 ﻿import Image from "next/image";
-import { SparkleIcon } from "@/components/ui/Icons";
 
 export default function LifestyleSection() {
   return (
@@ -13,8 +12,6 @@ export default function LifestyleSection() {
         />
       </div>
       <div className="site-container lifestyle-content">
-        <SparkleIcon className="size-9" />
-        <p className="eyebrow">The best part isn’t the cleaning.</p>
         <h2>
           Come home
           <br />
@@ -24,7 +21,6 @@ export default function LifestyleSection() {
           The counters are clear. The floors are finished. The bathroom is
           reset. Your evening is yours again.
         </p>
-        <span>LESS CATCHING UP. MORE SETTLING IN.</span>
       </div>
     </section>
   );

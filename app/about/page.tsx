@@ -3,7 +3,7 @@ import Image from "next/image";
 import QuoteButton from "@/components/ui/QuoteButton";
 import Section from "@/components/ui/Section";
 import ContactCtaSection from "@/components/sections/ContactCtaSection";
-import { SparkleIcon, ArrowIcon } from "@/components/ui/Icons";
+import { ArrowIcon } from "@/components/ui/Icons";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -36,13 +36,13 @@ export default function AboutPage() {
       <section className="about-hero section">
         <div className="site-container about-hero-grid">
           <div>
-            <p className="eyebrow">A good clean starts before we arrive.</p>
+            <p className="eyebrow">About Sparkle & Shine</p>
             <h1>
               Cleaning built
               <br />
               around
               <br />
-              <span className="text-blue">consistency.</span>
+              consistency.
             </h1>
             <p className="hero-description">
               A clean home is the result. A clear plan, a thoughtful team, and a
@@ -59,7 +59,6 @@ export default function AboutPage() {
               preload
             />
             <div className="about-image-note">
-              <SparkleIcon className="size-7" />
               <span>
                 Good people.
                 <br />
@@ -76,7 +75,7 @@ export default function AboutPage() {
             <h2>
               Home should be the place
               <br />
-              you can <span className="text-blue">switch off.</span>
+              you can switch off.
             </h2>
             <p>
               But when the cleaning list follows you from room to room, that’s
@@ -95,9 +94,6 @@ export default function AboutPage() {
       <Section tone="blue">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">
-              From the first hello to the finishing touches
-            </p>
             <h2>
               Care is a process.
               <br />
@@ -130,7 +126,6 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <p className="eyebrow">Your space. Your say.</p>
             <h2>
               A home to care for.
               <br />

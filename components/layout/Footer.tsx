@@ -12,8 +12,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Brand inverse />
             <p>
-              A little more room for life.
-              <br />A little less on your list.
+              Residential cleaning in West Des Moines and the surrounding metro.
             </p>
             <a className="footer-phone" href={siteConfig.contact.phoneHref}>
               {siteConfig.contact.phone}
@@ -21,7 +20,7 @@ export default function Footer() {
             <QuoteButton variant="light">Get a Quote</QuoteButton>
           </div>
           <nav aria-label="Cleaning services">
-            <h2>Find your clean</h2>
+            <h2>Cleaning services</h2>
             <ul>
               {services.map((s) => (
                 <li key={s.slug}>
@@ -31,7 +30,7 @@ export default function Footer() {
             </ul>
           </nav>
           <div>
-            <h2>Close to home</h2>
+            <h2>Service area</h2>
             <ul>
               {siteConfig.location.communities.map((city) => (
                 <li key={city}>
@@ -41,7 +40,7 @@ export default function Footer() {
             </ul>
           </div>
           <nav aria-label="Footer navigation">
-            <h2>A few more details</h2>
+            <h2>Useful links</h2>
             <ul>
               <li>
                 <Link href="/about">Why Sparkle & Shine</Link>

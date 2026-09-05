@@ -1,67 +1,59 @@
 ﻿import Link from "next/link";
-import {
-  ArrowIcon,
-  MessageIcon,
-  SparkleIcon,
-  HeartIcon,
-  CalendarIcon,
-} from "@/components/ui/Icons";
+import { ArrowIcon } from "@/components/ui/Icons";
 
 const values = [
   {
-    title: "You’re kept in the loop.",
-    text: "Clear arrival plans, agreed priorities, and someone to contact when things change.",
-    Icon: MessageIcon,
+    title: "Know what’s included.",
+    text: "We confirm the rooms, tasks, and any extras with your quote. If your first visit needs more time than regular upkeep, we’ll discuss that too.",
   },
   {
-    title: "A checklist. A shared standard.",
-    text: "A consistent approach across the team, with the details of your home in mind.",
-    Icon: SparkleIcon,
+    title: "Keep the same standard in view.",
+    text: "An agreed checklist gives the team a clear plan for each visit, including the priorities specific to your home.",
   },
   {
-    title: "Your home is personal.",
-    text: "Thoughtful handling of your space, belongings, pets, and product preferences.",
-    Icon: HeartIcon,
+    title: "Tell us what needs special care.",
+    text: "Pets, delicate finishes, product preferences, and rooms you’d like left alone all belong in the conversation before we arrive.",
   },
   {
-    title: "Real life has a schedule.",
-    text: "Recurring options and clear conversations when your routine needs to shift.",
-    Icon: CalendarIcon,
+    title: "Have a plan for the next visit.",
+    text: "Choose a recurring schedule that suits your household. When your routine changes, we’ll review timing and availability with you.",
   },
 ];
+
 export default function AboutIntro() {
   return (
     <div className="why-layout">
       <div>
-        <p className="eyebrow">The Sparkle & Shine way</p>
-        <h2>
-          Cleaning built
-          <br />
-          around
-          <br />
-          <span className="text-blue">consistency.</span>
-        </h2>
+        <div className="brand-signature">
+          <span aria-hidden="true">
+            S<span>&</span>S
+          </span>
+          <p>The Sparkle & Shine approach</p>
+        </div>
+        <h2>You should know what to expect.</h2>
         <p className="section-description">
-          You shouldn’t have to wonder who to contact, what’s included, or
-          whether the same standard will follow the next visit. Good cleaning
-          starts with a clear plan.
+          Inviting a cleaning team into your home takes trust. We start with the
+          practical details: what you need, what’s included, and how the visit
+          will work.
         </p>
         <Link className="text-link" href="/about">
-          Meet our approach
+          More about our approach
           <ArrowIcon />
         </Link>
       </div>
-      <div className="why-values">
-        {values.map(({ title, text, Icon }) => (
-          <article key={title}>
-            <Icon className="size-6" />
+      <ol className="why-values">
+        {values.map(({ title, text }, i) => (
+          <li key={title}>
+            <span className="value-number" aria-hidden="true">
+              0{i + 1}
+            </span>
             <div>
               <h3>{title}</h3>
               <p>{text}</p>
             </div>
-          </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   );
 }

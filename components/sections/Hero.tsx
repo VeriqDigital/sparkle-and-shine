@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="hero-copy">
           <p className="eyebrow">
             <span className="eyebrow-line" />
-            Home cleaning. Life, a little lighter.
+            Residential cleaning · Des Moines metro
           </p>
           <h1>
             A cleaner <br />
@@ -19,9 +19,9 @@ export default function Hero() {
             <span>A lighter week.</span>
           </h1>
           <p className="hero-description">
-            Reliable recurring and deep cleaning for busy households across the
-            Des Moines metro. More care for your home. More time for everything
-            else.
+            Recurring and deep cleaning for busy households across the Des
+            Moines metro. Choose weekly, biweekly, or monthly visits, or start
+            with a one-time clean.
           </p>
           <div className="hero-actions">
             <QuoteButton />
@@ -44,9 +44,6 @@ export default function Hero() {
               sizes="(max-width: 767px) 90vw, (max-width: 1279px) 48vw, 610px"
               preload
             />
-            <span className="photo-caption">
-              A fresh start to your everyday.
-            </span>
           </div>
           <div className="hero-inset">
             <Image
@@ -61,14 +58,9 @@ export default function Hero() {
               <SparkleIcon className="size-6" />
             </span>
             <div>
-              <strong>Clean home. Clear calendar.</strong>
-              <span>Leave the checklist to us.</span>
+              <strong>A schedule that fits your home</strong>
+              <span>Weekly · Biweekly · Monthly</span>
             </div>
-          </div>
-          <div className="hero-stamp" aria-hidden="true">
-            <span>THOUGHTFUL CARE</span>
-            <SparkleIcon className="size-10" />
-            <span>ROOM BY ROOM</span>
           </div>
         </div>
         <ul className="hero-checks" aria-label="The Sparkle & Shine approach">

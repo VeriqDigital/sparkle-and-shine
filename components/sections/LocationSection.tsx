@@ -1,48 +1,31 @@
 ﻿import QuoteButton from "@/components/ui/QuoteButton";
-import { MapPinIcon, SparkleIcon } from "@/components/ui/Icons";
 import { siteConfig } from "@/config/site";
 
 export default function LocationSection() {
   return (
     <div className="location-layout">
       <div>
-        <p className="eyebrow">
-          <MapPinIcon className="size-4" />
-          Good care. Close to home.
-        </p>
-        <h2>
-          Proudly serving
-          <br />
-          the Des Moines
-          <br />
-          <span className="text-blue">metro.</span>
-        </h2>
+        <p className="section-label">Service area</p>
+        <h2>Across the Des Moines metro.</h2>
         <p className="section-description">
-          From West Des Moines to the neighborhoods around it, we help busy
-          households make room for a lighter week.
+          Based around West Des Moines, with service in the communities listed
+          here. Include your location when you request a quote so we can confirm
+          availability.
         </p>
-        <QuoteButton variant="secondary">Find Your Clean</QuoteButton>
+        <QuoteButton variant="secondary">Check Availability</QuoteButton>
       </div>
-      <div className="region-panel">
-        <div className="region-heading">
-          <span>IOWA, AT HOME.</span>
-          <SparkleIcon className="size-7" />
-        </div>
-        <div className="region-center">
-          <MapPinIcon className="size-7" />
-          <strong>Des Moines metro</strong>
-          <span>Thoughtful cleaning. In your neighborhood.</span>
-        </div>
-        <ul className="location-pills">
+      <div className="community-directory">
+        <p>West Des Moines, Iowa & surrounding communities</p>
+        <ul className="service-communities">
           {siteConfig.location.communities.map((city) => (
             <li key={city}>
-              <span />
+              <span aria-hidden="true" />
               {city}
             </li>
           ))}
         </ul>
-        <p>
-          Based around West Des Moines · Availability confirmed with your quote.
+        <p className="scope-note">
+          Visit timing and service scope are confirmed with your quote.
         </p>
       </div>
     </div>

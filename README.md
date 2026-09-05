@@ -19,7 +19,7 @@ npm start
 
 ## Public website
 
-- `/`: editorial hero, featured services, keyboard-accessible room checklist, company standards, lifestyle imagery, process, clearly labeled sample feedback, service area, and FAQ.
+- `/`: editorial hero, featured services, keyboard-accessible room checklist, company standards, lifestyle imagery, process, service area, and FAQ.
 - `/about`: company philosophy and practical cleaning standards.
 - `/services`: six services with example scope, best-for guidance, and service-specific quote entry points.
 - `/contact`: introduction to the three-step quote experience and fictional contact details.
@@ -30,7 +30,7 @@ Public services come only from `data/services.ts`; FAQ content is in `data/faq.t
 
 ## Concept boundaries
 
-Sparkle & Shine is not an operating company. The phone number is fictional. Sample feedback is labeled. All marketing pages inherit noindex/nofollow metadata; `robots.txt` disallows crawling, and the existing `X-Robots-Tag` response header remains in place. No LocalBusiness JSON-LD is emitted.
+Sparkle & Shine is not an operating company. The phone number is fictional. All marketing pages inherit noindex/nofollow metadata; `robots.txt` disallows crawling, and the existing `X-Robots-Tag` response header remains in place. No LocalBusiness JSON-LD is emitted.
 
 Sanity configuration, schemas, client utilities, and `/studio` remain available. Public marketing pages neither fetch Sanity services nor mount `SanityLive`. Reconnecting content later should use an adapter to the `DemoService` presentation shape and restore live updates deliberately. The Studio still uses the existing Sanity environment configuration.
 

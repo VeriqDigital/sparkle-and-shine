@@ -7,23 +7,23 @@
 
 const benefits = [
   {
-    title: "On your calendar.",
-    detail: "Dependable scheduling",
+    title: "Recurring schedules",
+    detail: "Weekly, biweekly, or monthly",
     Icon: CalendarIcon,
   },
   {
-    title: "Clear from the start.",
-    detail: "Straightforward quotes",
+    title: "Personalized quotes",
+    detail: "Based on your home and priorities",
     Icon: MessageIcon,
   },
   {
-    title: "Care in the details.",
-    detail: "Respect for your home",
+    title: "Home care preferences",
+    detail: "Discuss pets and special surfaces",
     Icon: HeartIcon,
   },
   {
-    title: "Find your rhythm.",
-    detail: "Flexible recurring options",
+    title: "An agreed checklist",
+    detail: "Know what each visit includes",
     Icon: HomeIcon,
   },
 ];

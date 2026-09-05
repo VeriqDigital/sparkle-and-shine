@@ -23,7 +23,7 @@ export default function ContactPage() {
       <section className="contact-hero section">
         <div className="site-container contact-grid">
           <div>
-            <p className="eyebrow">One small step. A lighter week.</p>
+            <p className="eyebrow">Contact & quotes</p>
             <h1>
               Let’s take cleaning
               <br />
@@ -41,10 +41,6 @@ export default function ContactPage() {
                 sizes="(max-width: 767px) 90vw, 47vw"
                 preload
               />
-              <span>
-                <SparkleIcon className="size-5" />
-                More time for the good stuff.
-              </span>
             </div>
           </div>
           <div className="contact-quote-card">

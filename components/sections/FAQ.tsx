@@ -9,18 +9,13 @@ export default function FAQ() {
   return (
     <div className="faq-layout">
       <div>
-        <p className="eyebrow">A few helpful details</p>
-        <h2>
-          Good questions.
-          <br />
-          <span className="text-blue">Clear answers.</span>
-        </h2>
+        <h2>Before your first clean</h2>
         <p className="section-description">
-          A little clarity goes a long way. Here’s what to know before your
-          first clean.
+          Questions about supplies, access, or specific rooms? Here’s how we
+          plan a visit and confirm the details with you.
         </p>
         <Link href="/contact" className="text-link">
-          Let’s talk about your home
+          Contact & quotes
           <ArrowIcon />
         </Link>
       </div>

@@ -1,7 +1,17 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { ArrowIcon, SparkleIcon } from "@/components/ui/Icons";
+import { ArrowIcon } from "@/components/ui/Icons";
 import { services } from "@/data/services";
+
+const serviceNotes: Record<string, string> = {
+  "deep-cleaning": "Extra time for buildup and overlooked details.",
+  "move-in-move-out-cleaning":
+    "Plan an empty-home clean around your move date.",
+  "apartment-condo-cleaning": "Regular or one-time care for smaller homes.",
+  "one-time-home-reset": "Catch up on routine cleaning in a single visit.",
+  "short-term-rental-turnovers":
+    "A cleaning checklist for the time between guests.",
+};
 
 export default function ServicesSection() {
   const featured = services[0];
@@ -9,17 +19,16 @@ export default function ServicesSection() {
     <div>
       <div className="section-heading">
         <div>
-          <p className="eyebrow">Your home. Your kind of clean.</p>
+          <p className="eyebrow">Cleaning services</p>
           <h2>
-            Less on your list.
-            <br />
-            <span className="text-blue">More room for life.</span>
+            Regular help, or
+            <br />a one-time clean.
           </h2>
         </div>
         <div>
           <p>
-            From keeping up to catching up, there’s a clean for the season
-            you’re in.
+            The right service depends on your home’s size, its current
+            condition, and how often you’d like help.
           </p>
           <Link className="text-link" href="/services">
             Explore all services
@@ -36,17 +45,14 @@ export default function ServicesSection() {
               fill
               sizes="(max-width: 767px) 90vw, 50vw"
             />
-            <span className="service-tag">
-              <SparkleIcon className="size-4" />
-              The everyday essential
-            </span>
+            <span className="service-tag">Weekly · Biweekly · Monthly</span>
           </div>
           <div className="featured-service-copy">
-            <p className="eyebrow">Recurring home cleaning</p>
-            <h3>{featured.shortTitle}</h3>
+            <h3>Recurring home cleaning</h3>
             <p>
-              Weekly, every two weeks, or monthly. A dependable rhythm for a
-              home that feels good to come back to.
+              We’ll confirm the scope of your first clean, then plan the regular
+              visits that follow. Kitchens, bathrooms, dusting, and floors are
+              the usual starting points.
             </p>
             <span className="service-arrow">
               <ArrowIcon />
@@ -63,7 +69,7 @@ export default function ServicesSection() {
               <span className="service-number">0{i + 2}</span>
               <div>
                 <h3>{service.title}</h3>
-                <p>{service.shortTitle}</p>
+                <p>{serviceNotes[service.slug]}</p>
               </div>
               <ArrowIcon />
             </Link>

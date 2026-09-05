@@ -1,12 +1,11 @@
 ﻿"use client";
 import { useId, useRef, useState, type KeyboardEvent } from "react";
 import Image from "next/image";
-import { SparkleIcon } from "@/components/ui/Icons";
 
 const rooms = [
   {
     name: "Kitchen",
-    summary: "The heart of the home, ready for whatever’s cooking.",
+    summary: "Kitchen surfaces and floors",
     tasks: [
       "Counters and reachable surfaces",
       "Exterior appliance wipe-down",
@@ -19,7 +18,7 @@ const rooms = [
   },
   {
     name: "Bathrooms",
-    summary: "A fresh reset for the busiest little room.",
+    summary: "Bathroom fixtures and surfaces",
     tasks: [
       "Showers and tubs",
       "Sinks and countertops",
@@ -32,7 +31,7 @@ const rooms = [
   },
   {
     name: "Living areas",
-    summary: "Settle in. The everyday details are taken care of.",
+    summary: "Dusting, floor care, and a light tidy",
     tasks: [
       "Dusting reachable surfaces",
       "Accessible tables and shelving",
@@ -45,7 +44,7 @@ const rooms = [
   },
   {
     name: "Bedrooms",
-    summary: "End the day somewhere that feels restful.",
+    summary: "Bedroom surfaces and floor care",
     tasks: [
       "Reachable bedside and dresser surfaces",
       "Accessible mirrors",
@@ -78,15 +77,12 @@ export default function CleaningChecklist() {
     <div className="checklist-section">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">What clean actually means</p>
-          <h2>
-            The details that make
-            <br />a home feel finished.
-          </h2>
+          <h2>What’s included in a typical visit</h2>
         </div>
         <p>
-          Not just a quick once-over. A thoughtful checklist, with your home’s
-          priorities built in.
+          These are starting points for your quote. Tell us about special
+          surfaces or rooms that need extra attention so we can agree on the
+          scope.
         </p>
       </div>
       <div
@@ -133,12 +129,8 @@ export default function CleaningChecklist() {
                   fill
                   sizes="(max-width: 767px) 90vw, 50vw"
                 />
-                <span className="room-image-label">
-                  Thoughtful care, down to the details.
-                </span>
               </div>
               <div className="room-details">
-                <SparkleIcon className="size-9" />
                 <h3>{room.summary}</h3>
                 <ul>
                   {room.tasks.map((task) => (

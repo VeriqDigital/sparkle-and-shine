@@ -104,7 +104,6 @@ export default function ServicesPage() {
       </div>
       <Section tone="blue">
         <div className="pricing-note">
-          <SparkleIcon className="size-10" />
           <div>
             <p className="eyebrow">A quote that fits the actual work</p>
             <h2>
